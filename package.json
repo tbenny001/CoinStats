@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack-dev-server --content-base src --inline --hot",
+    "dev": "webpack-dev-server --content-base dist --inline --hot",
     "compile": "./node_modules/babel-cli/bin/babel.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -24,13 +24,15 @@
     "react-router-dom": "^4.1.2",
     "react-router-redux": "^4.0.8",
     "webpack": "^3.5.5",
-    "webpack-dev-server": "^2.7.1",
-    "xmlhttprequest": "^1.8.0"
+    "webpack-dev-server": "^2.7.1"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0"
   },
   "babel": {
-    "presets": ["es2015", "react"]
+    "presets": [
+      "es2015",
+      "react"
+    ]
   }
 }

@@ -4,7 +4,7 @@ module.exports = {
   entry: path.resolve(__dirname, "src", "client.js"),
   output: {
     filename: "client.min.js",
-    path: path.resolve(__dirname, "src"),
+    path: path.resolve(__dirname, "dist"),
     publicPath: '/'
   },
   module: {
