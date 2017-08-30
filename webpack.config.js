@@ -1,11 +1,11 @@
 var path = require('path');
 
 module.exports = {
-  entry: path.resolve(__dirname, "src", "client.js"),
+  entry: ['babel-polyfill', path.resolve(__dirname, "src", "client.js")],
   output: {
     filename: "client.min.js",
     path: path.resolve(__dirname, "dist"),
-    publicPath: '/'
+    publicPath: '/build'
   },
   module: {
     loaders: [
@@ -13,7 +13,7 @@ module.exports = {
         loader: 'babel-loader',
         test: /\.jsx?$/,
         query: {
-          presets: ['es2015', 'react']
+          presets: ['es2015', 'react', 'stage-0']
         }
       }
     ]
