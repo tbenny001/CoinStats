@@ -2,8 +2,7 @@ import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import Layout from './Layout.js';
-import Home from './Home';
-import Dashboard from './Dashboard';
+import CoinGrid from './CoinGrid';
 
 const AppRouter = (
   <Layout>

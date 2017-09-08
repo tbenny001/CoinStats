@@ -1,0 +1,2 @@
+The data from coinmarketcap's api should not be stored in the store. The only data that should be stored in the store should be data related to the app itself, such
+as comments, amount spent, etc. The component responsible for distributing the coin data will call the methods required to retrieve data from coinmarketcap.
