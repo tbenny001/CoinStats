@@ -9,8 +9,7 @@ const AppRouter = (
   <Layout>
     <BrowserRouter>
       <Switch>
-        <Route exact path="/" component={Home} />
-        <Route path="/dashboard" component={Dashboard} />
+        <Route exact path="/" component={CoinGrid} />
       </Switch>
     </BrowserRouter>
   </Layout>
