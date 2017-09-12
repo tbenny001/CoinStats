@@ -1,5 +1,7 @@
 import React from 'react';
-import data from '../data/data.js'
+import currencies from './../const/currencies'
+import fetch from 'isomorphic-fetch';
+
 
 export default class CoinGrid extends React.Component {
   constructor(props) {
@@ -10,16 +12,23 @@ export default class CoinGrid extends React.Component {
   }
 
   componentWillMount() {
-    const coinData = data.map(promise => promise.then(data => data));
-    this.setState({data: coinData})
+    fetch('/fetchCurrencyData', {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Accept": "application/json"
+      },
+      body: JSON.stringify({currencies: currencies})},
+    ).then(data => data.json())
+    .then(data => this.setState({data}));
   }
 
   render() {
     return (
       <div>
         <ul>
-          {this.state.data.map(coin => console.log(coin))}
-          // {this.state.data.map((coin, i) => <li key={i}>coin.id</li>)}
+          {console.log(this.state.data)}
+          {this.state.data.map((coin, i) => { return <li key={i}>{coin.id}</li>})}
         </ul>
       </div>
     )
@@ -28,4 +37,6 @@ export default class CoinGrid extends React.Component {
 
 /*
 The render function is probably being called before the promise resolves.
+Should the responsibility of this component solely be to render things? Should it
+not execute the fetch function
 */
