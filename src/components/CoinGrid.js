@@ -2,6 +2,7 @@ import React from 'react';
 import currencies from './../const/currencies'
 import fetch from 'isomorphic-fetch';
 
+import CoinBox from './CoinBox';
 
 export default class CoinGrid extends React.Component {
   constructor(props) {
@@ -25,11 +26,9 @@ export default class CoinGrid extends React.Component {
 
   render() {
     return (
-      <div>
-        <ul>
-          {console.log(this.state.data)}
-          {this.state.data.map((coin, i) => { return <li key={i}>{coin.id}</li>})}
-        </ul>
+      <div className="coin-box-container">
+        {console.log(this.state.data)}
+        {this.state.data.map((coin, i) => { return <CoinBox key={i} coinData={coin} />})}
       </div>
     )
   }
