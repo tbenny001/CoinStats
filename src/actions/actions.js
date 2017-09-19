@@ -1,8 +1,8 @@
-export function addInvestAmount(entryId, author, amount) {
+export function addInvestAmount(entryId, invester, amount) {
   return {
     type: 'ADD_INVEST_AMOUNT',
     entryId,
-    author,
+    invester,
     amount
   }
 }
