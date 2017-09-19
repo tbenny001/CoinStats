@@ -30,16 +30,13 @@
 .coin-box {
     border: 1px solid rgba(150,150,150,0.3137254901960784);
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
 
-.coin-box > p{
+.coin-box > p {
   text-align: center;
-}
-
-.info-box {
-  display: flex;
-  justify-content: space-around;
+  flex: 1 1 100%;
 }
 
 @media only screen and (max-width:1024px) {
