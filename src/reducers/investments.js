@@ -2,8 +2,8 @@ function postInvestments(state = [], action) {
   switch(action.type) {
     case 'ADD_INVEST_AMOUNT':
       return [...state,{
-        user: action.invester,
-        text: action.amount
+        investor: action.investor,
+        amount: action.amount
       }];
     case 'DEL_INVEST_AMOUNT':
       return [

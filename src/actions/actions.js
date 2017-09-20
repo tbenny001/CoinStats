@@ -8,7 +8,16 @@ export function addInvestAmount(entryId, invester, amount) {
 }
 
 export function removeInvestAmount(entryId, i) {
-  type: 'DEL_INVEST_AMOUNT',
-  i,
-  entryId
+  return {
+    type: 'DEL_INVEST_AMOUNT',
+    i,
+    entryId
+  }
+}
+
+export function updateCoinData(coinData) {
+  return {
+    type: 'UPDATE_COIN_DATA',
+    data: coinData
+  }
 }
