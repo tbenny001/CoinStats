@@ -27,15 +27,8 @@ export default class CoinGrid extends React.Component {
   render() {
     return (
       <div className="coin-box-container">
-        {console.log(this.state.data)}
         {this.state.data.map((coin, i) => { return <CoinBox key={i} coinData={coin} />})}
       </div>
     )
   }
 }
-
-/*
-The render function is probably being called before the promise resolves.
-Should the responsibility of this component solely be to render things? Should it
-not execute the fetch function
-*/
