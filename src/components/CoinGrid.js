@@ -5,13 +5,6 @@ import fetch from 'isomorphic-fetch';
 import CoinBox from './CoinBox';
 
 export default class CoinGrid extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      data: []
-    }
-  }
-
   componentWillMount() {
     fetch('/fetchCurrencyData', {
       method: "POST",
@@ -21,13 +14,13 @@ export default class CoinGrid extends React.Component {
       },
       body: JSON.stringify({currencies: currencies})},
     ).then(data => data.json())
-    .then(data => this.setState({data}));
+    .then(data => this.props.updateCoinData(data));
   }
 
   render() {
     return (
       <div className="coin-box-container">
-        {this.state.data.map((coin, i) => { return <CoinBox key={i} coinData={coin} />})}
+        {this.props.data.map((coin, i) => { return <CoinBox key={i} coinData={coin} />})}
       </div>
     )
   }

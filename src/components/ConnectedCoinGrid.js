@@ -6,13 +6,12 @@ import CoinGrid from './CoinGrid';
 
 function mapStateToProps(state) {
   return {
-    coinData: state.coinData,
-    investments: state.investments
+    coinData: state.data
   };
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators(actions, dipatch);
+  return bindActionCreators(actions, dispatch);
 }
 
 const ConnectedCoinGrid = connect(mapStateToProps, mapDispatchToProps)(CoinGrid);

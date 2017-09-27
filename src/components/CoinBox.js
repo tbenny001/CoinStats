@@ -2,6 +2,10 @@ import React from 'react';
 import{ Link } from 'react-router-dom';
 
 export default class CoinBox extends React.Component {
+  redOrGreen(value) {
+      return (value < 0) ? "red" : "green";
+  }
+
   render() {
     let coinData = this.props.coinData;
     const linkStyle = {
@@ -20,9 +24,9 @@ export default class CoinBox extends React.Component {
           </div>
           <div>
             <p>{coinData.price_usd}</p>
-            <p>{coinData.percent_change_7d}</p>
-            <p>{coinData.percent_change_24h}</p>
-            <p>{coinData.percent_change_1h}</p>
+            <p style={{color: redOrGreen(coinData.percent_change_7d)}}>{coinData.percent_change_7d}</p>
+            <p style={{color: redOrGreen(coinData.percent_change_24h)}}>{coinData.percent_change_24h}</p>
+            <p style={{color: redOrGreen(coinData.percent_change_1h)}}>{coinData.percent_change_1h}</p>
           </div>
         </div>
       </Link>
