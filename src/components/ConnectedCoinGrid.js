@@ -6,7 +6,7 @@ import CoinGrid from './CoinGrid';
 
 function mapStateToProps(state) {
   return {
-    coinData: state.data
+    data: state.data
   };
 }
 
